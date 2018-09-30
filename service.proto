@@ -1,0 +1,18 @@
+syntax = "proto3"
+
+//Typical command: protoc service.proto --go_out=plugins=grpc:myservice 
+
+package myservice;
+
+// Service definition
+service MyService{
+    rpc ReverseWord(WordRequest) returns WordReply;
+}
+
+message WordRequest {
+    string word = 1;
+}
+
+message WordReply {
+    string reverseWord = 1;
+}
